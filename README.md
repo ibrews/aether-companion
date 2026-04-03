@@ -80,7 +80,7 @@ cd aether-companion
 docker-compose up -d
 ```
 
-Open `http://localhost:3000` in your browser.
+Open `http://localhost:3456` in your browser.
 
 ### Without Docker
 
@@ -108,7 +108,7 @@ node server.js
 
 | Variable | Default | Description |
 |:---------|:--------|:------------|
-| `PORT` | `3000` | Server port |
+| `PORT` | `3456` | Server port |
 | `OLLAMA_HOST` | `http://localhost:11434` | Ollama API endpoint |
 | `OLLAMA_MODEL` | `qwen3:8b` | Default model for inference |
 
@@ -133,7 +133,7 @@ Override via environment variables or in `docker-compose.yml`.
 +----------------------------------------------------+
 |  Docker Container (Node 20 Alpine)                 |
 |                                                    |
-|  Express server (port 3000)                        |
+|  Express server (port 3456)                        |
 |  +-- Static file serving                           |
 |  +-- /api/health, /api/config                      |
 |  +-- WebSocket server (ws)                         |
@@ -183,12 +183,12 @@ aether-companion/
 
 **On Vision Pro:**
 1. Ensure your Mac and Vision Pro are on the same network
-2. Open Safari on Vision Pro, navigate to `http://<your-mac-ip>:3000`
+2. Open Safari on Vision Pro, navigate to `http://<your-mac-ip>:3456`
 3. Tap "Enter AR"
 4. Look at a surface and tap to place the companion
 
 **On Quest:**
-1. Open Quest Browser, navigate to `http://<your-pc-ip>:3000`
+1. Open Quest Browser, navigate to `http://<your-pc-ip>:3456`
 2. Tap "Enter AR" (passthrough) or "Enter VR"
 3. Point at a surface and click to place
 

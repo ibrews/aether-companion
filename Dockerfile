@@ -7,9 +7,9 @@ RUN npm ci --production
 
 COPY . .
 
-EXPOSE 3000
+EXPOSE 3456
 
-ENV PORT=3000
+ENV PORT=3456
 ENV OLLAMA_HOST=http://host.docker.internal:11434
 ENV OLLAMA_MODEL=qwen3:8b
 

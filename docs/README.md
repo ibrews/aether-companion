@@ -40,7 +40,7 @@ Aether is a glowing holographic AI presence that you can talk to — by voice or
 docker-compose up -d
 ```
 
-Then open `http://localhost:3000` in your browser.
+Then open `http://localhost:3456` in your browser.
 
 ### Without Docker
 
@@ -53,13 +53,13 @@ node server.js
 
 | Variable | Default | Description |
 |----------|---------|-------------|
-| `PORT` | `3000` | Server port |
+| `PORT` | `3456` | Server port |
 | `OLLAMA_HOST` | `http://localhost:11434` | Ollama API endpoint |
 | `OLLAMA_MODEL` | `llama3.2` | Default model for inference |
 
 ## WebXR Usage
 
-1. Open `http://localhost:3000` on your headset's browser
+1. Open `http://localhost:3456` on your headset's browser
 2. Click "Enter AR" (or "Enter VR" on Quest)
 3. Look at a surface and tap to place the companion
 4. Chat via the overlay panel or use voice input
