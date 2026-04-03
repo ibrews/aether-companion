@@ -18,19 +18,30 @@
 
 ---
 
-<p align="center">
-  <img src="docs/screenshots/hero.png" alt="Aether Companion — Desktop View" width="720">
-</p>
-
-<p align="center">
-  <img src="docs/screenshots/chat.png" alt="Chat Conversation" width="350">
-  &nbsp;&nbsp;
-  <img src="docs/screenshots/transparent.png" alt="Transparent Mode" width="350">
-</p>
-
-<p align="center">
-  <img src="docs/screenshots/mobile.png" alt="Mobile View" width="200">
-</p>
+<table align="center">
+  <tr>
+    <td colspan="2" align="center">
+      <img src="docs/screenshots/hero.png" alt="Aether Companion — Desktop View" width="720"><br>
+      <em>The companion orb in its default desktop view — particle system with ambient scene</em>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <img src="docs/screenshots/chat.png" alt="Chat Conversation" width="350"><br>
+      <em>Live conversation with a local LLM — tokens stream in real-time</em>
+    </td>
+    <td align="center" width="50%">
+      <img src="docs/screenshots/transparent.png" alt="Transparent Mode" width="350"><br>
+      <em>Transparent mode — no background, ready for AR passthrough or OBS overlay</em>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">
+      <img src="docs/screenshots/mobile.png" alt="Mobile View" width="200"><br>
+      <em>Responsive mobile layout — works on phones and tablets</em>
+    </td>
+  </tr>
+</table>
 
 ---
 
