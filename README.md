@@ -31,8 +31,8 @@
       <em>Live conversation with a local LLM — tokens stream in real-time</em>
     </td>
     <td align="center" width="50%">
-      <img src="docs/screenshots/transparent.png" alt="Transparent Mode" width="350"><br>
-      <em>Transparent mode — no background, ready for AR passthrough or OBS overlay</em>
+      <img src="docs/screenshots/ar-passthrough.png" alt="AR Passthrough Mode" width="350"><br>
+      <em>AR passthrough — the companion floating in your room via WebXR</em>
     </td>
   </tr>
   <tr>
