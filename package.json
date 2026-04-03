@@ -8,8 +8,11 @@
     "dev": "node server.js"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.21.0",
-    "ws": "^8.16.0",
-    "cors": "^2.8.5"
+    "ws": "^8.16.0"
+  },
+  "devDependencies": {
+    "puppeteer": "^24.40.0"
   }
 }

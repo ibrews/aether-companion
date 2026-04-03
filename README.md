@@ -18,6 +18,22 @@
 
 ---
 
+<p align="center">
+  <img src="docs/screenshots/hero.png" alt="Aether Companion — Desktop View" width="720">
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/chat.png" alt="Chat Conversation" width="350">
+  &nbsp;&nbsp;
+  <img src="docs/screenshots/transparent.png" alt="Transparent Mode" width="350">
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/mobile.png" alt="Mobile View" width="200">
+</p>
+
+---
+
 ## What is Aether?
 
 Aether is a **glowing holographic AI companion** that floats in your room. Talk to it by voice or text. It responds using a local LLM running on your own hardware — no internet required, no data ever leaves your machine.

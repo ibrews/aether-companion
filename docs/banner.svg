@@ -83,7 +83,7 @@
 
   <!-- Subtitle -->
   <text x="400" y="258" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro', 'Segoe UI', system-ui, sans-serif" font-size="14" fill="#8b8fa3" letter-spacing="0.5">
-    Spatial AI &bull; WebXR &bull; Local LLM &bull; Privacy-First
+    Spatial AI &#x2022; WebXR &#x2022; Local LLM &#x2022; Privacy-First
   </text>
 
   <!-- Version badge -->
