@@ -25,8 +25,9 @@ export class SceneManager {
     this.renderer.toneMappingExposure = 1.2;
     this.renderer.xr.enabled = true;
 
-    // Dark background for desktop (removed in AR)
+    // Dark background for desktop (removed in AR or transparent mode)
     this.scene.background = new THREE.Color(0x0a0b10);
+    this.transparentMode = false;
 
     // Lighting
     const ambient = new THREE.AmbientLight(0x404060, 0.4);
@@ -78,10 +79,10 @@ export class SceneManager {
       opacity: 0.15,
       side: THREE.DoubleSide
     });
-    const ring = new THREE.Mesh(ringGeo, ringMat);
-    ring.rotation.x = -Math.PI / 2;
-    ring.position.y = 0.001;
-    this.scene.add(ring);
+    this.ring = new THREE.Mesh(ringGeo, ringMat);
+    this.ring.rotation.x = -Math.PI / 2;
+    this.ring.position.y = 0.001;
+    this.scene.add(this.ring);
   }
 
   _createAmbientParticles() {
@@ -121,16 +122,29 @@ export class SceneManager {
     });
   }
 
+  setTransparent(transparent) {
+    this.transparentMode = transparent;
+    if (transparent) {
+      this.scene.background = null;
+      if (this.ground) this.ground.visible = false;
+      if (this.ambientParticles) this.ambientParticles.visible = false;
+      if (this.ring) this.ring.visible = false;
+    } else {
+      this.scene.background = new THREE.Color(0x0a0b10);
+      if (this.ground) this.ground.visible = true;
+      if (this.ambientParticles) this.ambientParticles.visible = true;
+      if (this.ring) this.ring.visible = true;
+    }
+  }
+
   enterAR() {
-    this.scene.background = null;
-    if (this.ground) this.ground.visible = false;
-    if (this.ambientParticles) this.ambientParticles.visible = false;
+    this.setTransparent(true);
   }
 
   exitAR() {
-    this.scene.background = new THREE.Color(0x0a0b10);
-    if (this.ground) this.ground.visible = true;
-    if (this.ambientParticles) this.ambientParticles.visible = true;
+    if (!this.transparentMode) {
+      this.setTransparent(false);
+    }
   }
 
   onResize() {

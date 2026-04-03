@@ -6,23 +6,47 @@ import { XRManager } from './xr-manager.js';
 import { ChatManager } from './chat.js';
 import { SpeechManager } from './speech.js';
 
-async function init() {
-  const loadingEl = document.getElementById('loading');
-
-  // 1. Check backend status
-  let config = { ollama: false, model: '--', models: [] };
+async function checkOllama() {
   try {
     const resp = await fetch('/api/config');
-    config = await resp.json();
+    return await resp.json();
   } catch (e) {
-    console.warn('[app] backend unreachable');
+    return { ollama: false, model: '--', models: [] };
   }
+}
 
-  // Update status bar
+function updateStatus(config) {
   const statusDot = document.getElementById('ollama-status');
   const modelName = document.getElementById('model-name');
   statusDot.className = `status-dot ${config.ollama ? 'online' : 'offline'}`;
   modelName.textContent = config.ollama ? config.model : 'Ollama offline';
+}
+
+function showOfflineBanner(show) {
+  const banner = document.getElementById('ollama-offline');
+  banner.style.display = show ? 'block' : 'none';
+}
+
+async function init() {
+  const loadingEl = document.getElementById('loading');
+
+  // 1. Check backend status
+  let config = await checkOllama();
+  updateStatus(config);
+
+  // Show offline banner if Ollama isn't running
+  if (!config.ollama) {
+    showOfflineBanner(true);
+  }
+
+  // Retry button
+  document.getElementById('retry-ollama').addEventListener('click', async () => {
+    config = await checkOllama();
+    updateStatus(config);
+    if (config.ollama) {
+      showOfflineBanner(false);
+    }
+  });
 
   // 2. Initialize Three.js scene
   const canvas = document.getElementById('scene-canvas');
@@ -31,7 +55,21 @@ async function init() {
   // 3. Create companion avatar
   const companion = new Companion(sceneManager.scene);
 
-  // 4. Initialize chat
+  // 4. Background toggle — transparent mode for passthrough / streaming
+  const bgToggle = document.getElementById('bg-toggle');
+  let transparentMode = false;
+
+  bgToggle.addEventListener('click', () => {
+    transparentMode = !transparentMode;
+    bgToggle.classList.toggle('active', transparentMode);
+    if (transparentMode) {
+      sceneManager.setTransparent(true);
+    } else {
+      sceneManager.setTransparent(false);
+    }
+  });
+
+  // 5. Initialize chat
   const chat = new ChatManager();
   chat.connect();
 
@@ -49,7 +87,7 @@ async function init() {
     companion.onToken();
   };
 
-  // 5. Initialize speech
+  // 6. Initialize speech
   const speech = new SpeechManager();
   speech.onResult = (transcript) => {
     chat.send(transcript);
@@ -62,10 +100,10 @@ async function init() {
     }
   };
 
-  // 6. Initialize WebXR
+  // 7. Initialize WebXR
   const xrManager = new XRManager(sceneManager, companion);
 
-  // 7. Animation loop
+  // 8. Animation loop
   const clock = sceneManager.clock;
 
   sceneManager.renderer.setAnimationLoop((timestamp, frame) => {
@@ -81,7 +119,7 @@ async function init() {
     sceneManager.render();
   });
 
-  // 8. Hide loading screen
+  // 9. Hide loading screen
   setTimeout(() => {
     loadingEl.classList.add('hidden');
     setTimeout(() => loadingEl.remove(), 600);

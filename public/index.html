@@ -45,6 +45,27 @@
   <!-- XR button -->
   <button id="xr-button" style="display:none">Enter AR</button>
 
+  <!-- Controls bar -->
+  <div id="controls-bar">
+    <button id="bg-toggle" title="Toggle transparent background">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M12 2a10 10 0 0 1 0 20"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Ollama offline banner -->
+  <div id="ollama-offline" style="display:none">
+    <div class="offline-icon">!</div>
+    <div class="offline-text">
+      <strong>Ollama not detected</strong>
+      <p>Aether needs a local LLM to chat. Start Ollama on this machine or point to a network host.</p>
+      <code>ollama serve</code>
+    </div>
+    <button id="retry-ollama">Retry</button>
+  </div>
+
   <!-- Status bar -->
   <div id="status-bar">
     <span id="ollama-status" class="status-dot offline"></span>

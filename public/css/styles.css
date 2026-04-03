@@ -203,7 +203,7 @@ html, body {
 /* XR Button */
 #xr-button {
   position: fixed;
-  top: 24px; right: 24px;
+  top: 24px; right: 72px;
   padding: 12px 24px;
   background: var(--glass);
   backdrop-filter: blur(16px);
@@ -250,6 +250,110 @@ html, body {
 .status-dot.offline { background: var(--red); }
 
 #version { opacity: 0.5; margin-left: 4px; }
+
+/* Controls Bar */
+#controls-bar {
+  position: fixed;
+  top: 24px; right: 24px;
+  display: flex;
+  gap: 8px;
+  z-index: 15;
+}
+
+#bg-toggle {
+  width: 40px; height: 40px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  color: var(--text-dim);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+#bg-toggle:hover { color: var(--text); border-color: var(--accent); }
+#bg-toggle.active {
+  color: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+#bg-toggle svg { width: 18px; height: 18px; }
+
+/* Ollama Offline Banner */
+#ollama-offline {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--glass);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  max-width: 400px;
+  text-align: center;
+  z-index: 30;
+  animation: msg-in 0.4s ease;
+}
+
+.offline-icon {
+  width: 48px; height: 48px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: rgba(239, 68, 68, 0.15);
+  color: var(--red);
+  font-size: 24px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.offline-text strong {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.offline-text p {
+  font-size: 13px;
+  color: var(--text-dim);
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.offline-text code {
+  display: inline-block;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-size: 13px;
+  color: var(--accent);
+  font-family: 'SF Mono', 'Fira Code', monospace;
+}
+
+#retry-ollama {
+  margin-top: 20px;
+  padding: 10px 24px;
+  border: 1px solid var(--accent);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+#retry-ollama:hover {
+  background: var(--accent);
+  color: #fff;
+}
 
 /* Scrollbar */
 #chat-messages::-webkit-scrollbar { width: 4px; }
