@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" fill="none">
+  <defs>
+    <radialGradient id="orb-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.8"/>
+      <stop offset="40%" stop-color="#6366f1" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#6366f1" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb-core" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#818cf8"/>
+      <stop offset="60%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#4f46e5"/>
+    </radialGradient>
+    <filter id="blur-lg">
+      <feGaussianBlur stdDeviation="20"/>
+    </filter>
+    <filter id="blur-sm">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0b10"/>
+      <stop offset="100%" stop-color="#111327"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="300" rx="16" fill="url(#bg)"/>
+
+  <!-- Subtle grid lines -->
+  <line x1="0" y1="250" x2="800" y2="250" stroke="#1a1d2a" stroke-width="0.5"/>
+  <ellipse cx="400" cy="250" rx="300" ry="1" fill="#6366f1" opacity="0.15"/>
+
+  <!-- Ambient particles -->
+  <circle cx="120" cy="80" r="1.5" fill="#6366f1" opacity="0.4"/>
+  <circle cx="680" cy="60" r="1" fill="#6366f1" opacity="0.3"/>
+  <circle cx="250" cy="40" r="1" fill="#818cf8" opacity="0.5"/>
+  <circle cx="550" cy="90" r="1.5" fill="#818cf8" opacity="0.3"/>
+  <circle cx="700" cy="200" r="1" fill="#6366f1" opacity="0.4"/>
+  <circle cx="100" cy="220" r="1" fill="#818cf8" opacity="0.3"/>
+  <circle cx="350" cy="30" r="0.8" fill="#a5b4fc" opacity="0.4"/>
+  <circle cx="650" cy="240" r="0.8" fill="#a5b4fc" opacity="0.3"/>
+  <circle cx="180" cy="160" r="1.2" fill="#6366f1" opacity="0.25"/>
+  <circle cx="620" cy="150" r="1" fill="#818cf8" opacity="0.2"/>
+
+  <!-- Outer glow -->
+  <circle cx="400" cy="140" r="80" fill="url(#orb-glow)" filter="url(#blur-lg)"/>
+
+  <!-- Particle ring (dots around the orb) -->
+  <circle cx="355" cy="115" r="1.5" fill="#818cf8" opacity="0.7"/>
+  <circle cx="340" cy="135" r="1" fill="#a5b4fc" opacity="0.6"/>
+  <circle cx="345" cy="155" r="1.5" fill="#818cf8" opacity="0.5"/>
+  <circle cx="360" cy="170" r="1" fill="#6366f1" opacity="0.7"/>
+  <circle cx="380" cy="178" r="1.5" fill="#a5b4fc" opacity="0.6"/>
+  <circle cx="400" cy="180" r="1" fill="#818cf8" opacity="0.5"/>
+  <circle cx="420" cy="178" r="1.5" fill="#6366f1" opacity="0.7"/>
+  <circle cx="440" cy="170" r="1" fill="#a5b4fc" opacity="0.6"/>
+  <circle cx="455" cy="155" r="1.5" fill="#818cf8" opacity="0.5"/>
+  <circle cx="460" cy="135" r="1" fill="#6366f1" opacity="0.7"/>
+  <circle cx="455" cy="115" r="1.5" fill="#a5b4fc" opacity="0.6"/>
+  <circle cx="445" cy="100" r="1" fill="#818cf8" opacity="0.5"/>
+  <circle cx="430" cy="95" r="1.5" fill="#6366f1" opacity="0.7"/>
+  <circle cx="410" cy="92" r="1" fill="#a5b4fc" opacity="0.6"/>
+  <circle cx="390" cy="92" r="1.5" fill="#818cf8" opacity="0.5"/>
+  <circle cx="370" cy="95" r="1" fill="#6366f1" opacity="0.7"/>
+  <circle cx="358" cy="103" r="1.5" fill="#a5b4fc" opacity="0.6"/>
+
+  <!-- Scattered particles -->
+  <circle cx="320" cy="125" r="1" fill="#818cf8" opacity="0.4"/>
+  <circle cx="480" cy="145" r="1" fill="#818cf8" opacity="0.35"/>
+  <circle cx="470" cy="110" r="0.8" fill="#a5b4fc" opacity="0.4"/>
+  <circle cx="330" cy="165" r="0.8" fill="#a5b4fc" opacity="0.35"/>
+  <circle cx="310" cy="150" r="1.2" fill="#6366f1" opacity="0.3"/>
+  <circle cx="490" cy="125" r="1.2" fill="#6366f1" opacity="0.3"/>
+
+  <!-- Core orb -->
+  <circle cx="400" cy="140" r="30" fill="url(#orb-core)" filter="url(#blur-sm)"/>
+  <circle cx="400" cy="140" r="22" fill="#6366f1" opacity="0.9"/>
+  <circle cx="392" cy="132" r="6" fill="#a5b4fc" opacity="0.3"/>
+
+  <!-- Title -->
+  <text x="400" y="230" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif" font-size="36" font-weight="700" fill="#e2e4ed" letter-spacing="-0.5">
+    Aether Companion
+  </text>
+
+  <!-- Subtitle -->
+  <text x="400" y="258" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro', 'Segoe UI', system-ui, sans-serif" font-size="14" fill="#8b8fa3" letter-spacing="0.5">
+    Spatial AI &bull; WebXR &bull; Local LLM &bull; Privacy-First
+  </text>
+
+  <!-- Version badge -->
+  <rect x="355" y="268" width="90" height="20" rx="10" fill="#1a1d2a" stroke="#2a2d3a" stroke-width="0.5"/>
+  <text x="400" y="282" text-anchor="middle" font-family="monospace" font-size="10" fill="#6366f1">v1.0.0</text>
+</svg>
