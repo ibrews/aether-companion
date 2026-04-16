@@ -141,6 +141,14 @@ node server.js
 
 Override via environment variables or in `docker-compose.yml`.
 
+## Things to Try
+
+1. **Run `docker compose up` and open `http://localhost:8080`** — the Aether orb appears with a pulsing particle system; type a message in the chat box and the local LLM responds with tokens streaming in real-time.
+2. **Click the AR button (or visit the URL from a WebXR-capable browser on Vision Pro or Quest)** — the companion orb places itself in your physical room via WebXR passthrough and you can walk around it.
+3. **Type "Tell me something interesting about quantum physics"** — the orb's animation tempo shifts with the response; longer reasoning shows visually in the particle activity.
+4. **Open `docker-compose.yml` and change `OLLAMA_MODEL` to a different model** (e.g. `llama3.2:3b`), then restart — the companion switches models with no code change; compare response quality and speed.
+5. **Check the CI.computer Companion Marketplace** — Aether is listed as an installable companion; install it from the marketplace to verify the one-click deployment flow works end-to-end.
+
 ## Architecture
 
 ```
